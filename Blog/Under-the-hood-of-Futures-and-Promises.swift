@@ -18,7 +18,7 @@ class Future<Value> {
     fileprivate var result: Result<Value>? {
         didSet { result.map(report) }
     }
-    fileprivate lazy var callbacks = [(Result<Value>) -> Void]()
+    private lazy var callbacks = [(Result<Value>) -> Void]()
 
     func observe(with callback: @escaping (Result<Value>) -> Void) {
         callbacks.append(callback)
