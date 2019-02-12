@@ -70,6 +70,3 @@ DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
         animator.startAnimation()
     }
 }
-
-
-
