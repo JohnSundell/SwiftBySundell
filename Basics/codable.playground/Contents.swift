@@ -1,3 +1,8 @@
+// Swift by Sundell sample code
+// https://www.swiftbysundell.com/basics/codable
+// (c) 2019 John Sundell
+// Licensed under the MIT license
+
 import Foundation
 
 // -- Declaring a Codable type --
