@@ -34,22 +34,28 @@ child.view.removeFromSuperview()
 // --- Defining a convenience extension ---
 
 extension UIViewController {
+    
     func add(_ child: UIViewController) {
-        view.addSubview(child.view)
         addChild(child)
+        child.beginAppearanceTransition(true, animated: true)
+        view.addSubview(child.view)
+        child.endAppearanceTransition()
         child.didMove(toParent: self)
     }
-
+    
     func remove() {
+        
         // Just to be safe, we check that this view controller
         // is actually added to a parent before removing it.
         guard parent != nil else {
             return
         }
-
+        
         willMove(toParent: nil)
-        removeFromParent()
+        self.beginAppearanceTransition(false, animated: true)
         view.removeFromSuperview()
+        self.endAppearanceTransition()
+        removeFromParent()
     }
 }
 
