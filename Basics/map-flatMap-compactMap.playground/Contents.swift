@@ -1,5 +1,5 @@
 // Swift by Sundell sample code
-// https://www.swiftbysundell.com/basics/map-flatmap-compactmap
+// https://www.swiftbysundell.com/basics/map-flatmap-and-compactmap
 // (c) 2019 John Sundell
 // Licensed under the MIT license
 
