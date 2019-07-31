@@ -14,7 +14,7 @@ print(stringA == stringB) // true
 // --- Iterating over all of the characters within a string ---
 
 func printCharacters(in string: String) {
-    for character in stringA {
+    for character in string {
         print(character)
     }
 }
