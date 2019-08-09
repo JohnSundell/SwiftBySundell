@@ -25,11 +25,11 @@ struct Calendar {
 
 extension Calendar {
     func isFirstEvent(scheduledAfter date: Date) -> Bool {
-        guard let nextDate = events.first else {
+        guard let firstEvent = events.first else {
             return false
         }
 
-        return nextDate.date > date
+        return firstEvent.date > date
     }
 }
 
