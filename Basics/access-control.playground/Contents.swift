@@ -55,21 +55,15 @@ class DiscountedPriceCalculator: PriceCalculator {
 extension UIAlertController {
     func showPriceDescription(
         for products: [Product],
-        in viewController: UIViewController,
         calculator: DiscountedPriceCalculator
     ) {
-        let alert = UIAlertController()
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
-
         let price = calculator.calculatePrice(for: products)
 
         // We can now access 'discount' even outside of the type
         // that it's declared in, thanks to 'fileprivate':
-        alert.message = """
+        message = """
         Your \(products.count) product(s) will cost \(price).
         Including a discount of \(calculator.discount).
         """
-
-        viewController.present(alert, animated: true)
     }
 }
