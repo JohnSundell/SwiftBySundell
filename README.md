@@ -1,2 +1,3 @@
 # SwiftBySundell
-Code samples from the Swift by Sundell blog &amp; podcast
+
+Code samples from the Swift by Sundell website & podcast.
