@@ -55,7 +55,7 @@ let repoPublisher = publisher
         type: Repository.self,
         decoder: JSONDecoder()
     )
-    .receive(on: RunLoop.main)
+    .receive(on: DispatchQueue.main)
 
 // --- Updating our UI based on our reactive chain ---
 
