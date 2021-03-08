@@ -20,7 +20,8 @@ guard let url = components.url else {
 // -- Creating a label to display our result in --
 
 let label = UILabel()
-label.textColor = .white
+label.textColor = .darkGray
+label.backgroundColor = .white
 label.numberOfLines = 0
 label.frame.size = CGSize(width: 300, height: 300)
 PlaygroundPage.current.liveView = label
