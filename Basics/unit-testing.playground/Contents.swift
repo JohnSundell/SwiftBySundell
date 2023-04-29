@@ -14,6 +14,24 @@ extension Product {
     }
 }
 
+class ShoppingCart {
+    private var products: [Product] = []
+    
+    var totalPrice: Double {
+        return products.reduce(0) { $0 + $1.price }
+    }
+    
+    func add(_ product: Product) {
+        products.append(product)
+    }
+    
+    func applyCoupon(_ coupon: Coupon) {
+        for i in 0..<products.count {
+            products[i].apply(coupon)
+        }
+    }
+}
+
 class ProductTests: XCTestCase {
     func testApplyingCoupon() {
         // Given
@@ -54,6 +72,22 @@ class ShoppingCartTests: XCTestCase {
         // Then
         XCTAssertEqual(shoppingCart.totalPrice, 35)
     }
+    
+//    Given, When, Then — which is commonly used in order to make tests easier to read and debug, especially when working within a team. It can sort of be read as ”Given these conditions, when these actions are performed, then this is the expected outcome
+    
+    func testApplyingCoupon() {
+            var product1 = Product(name: "Book", price: 20)
+            var product2 = Product(name: "Movie", price: 15)
+            shoppingCart.add(product1)
+            shoppingCart.add(product2)
+            
+            let coupon = Coupon(name: "Holiday Sale", discount: 20)
+            shoppingCart.applyCoupon(coupon)
+            
+            XCTAssertEqual(product1.price, 16)
+            XCTAssertEqual(product2.price, 12)
+            XCTAssertEqual(shoppingCart.totalPrice, 28)
+        }
 }
 
 // --- Running all of our unit tests within the playground ---
