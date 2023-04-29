@@ -73,6 +73,8 @@ class ShoppingCartTests: XCTestCase {
         XCTAssertEqual(shoppingCart.totalPrice, 35)
     }
     
+//    Given, When, Then — which is commonly used in order to make tests easier to read and debug, especially when working within a team. It can sort of be read as ”Given these conditions, when these actions are performed, then this is the expected outcome
+    
     func testApplyingCoupon() {
             var product1 = Product(name: "Book", price: 20)
             var product2 = Product(name: "Movie", price: 15)
